@@ -20,6 +20,10 @@ class LoginUserService
                 'email' => [__('api.Invalid credentials.')],
             ]);
         }
+        activity()
+        ->causedBy($user)
+        ->performedOn($user)
+        ->log('قام بتسجيل الدخول');
         $token = $user->createToken('auth_token')->plainTextToken;
         return [
             'user'  => $user,
