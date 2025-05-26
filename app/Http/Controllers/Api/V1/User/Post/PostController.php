@@ -29,7 +29,7 @@ class PostController extends Controller
             $user = auth('sanctum')->user();
             $filters = $request->only(['status', 'date']);
             $posts = $this->postService->index($user, $filters);
-            return $this->success(PostResource::collection($posts), __('api.successfully'));
+            return $this->success(PostResource::collection($posts)->response()->getData(true), __('api.successfully'));
         } catch (Throwable $e) {
             return $this->errorUnExpected($e);
         }

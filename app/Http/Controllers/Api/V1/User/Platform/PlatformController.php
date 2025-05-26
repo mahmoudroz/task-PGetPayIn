@@ -26,7 +26,7 @@ class PlatformController extends Controller
     {
         try {
             $posts = $this->platformService->index();
-            return $this->success(PlatformResource::collection($posts), __('api.successfully'));
+            return $this->success(PlatformResource::collection($posts)->response()->getData(true), __('api.successfully'));
         } catch (Throwable $e) {
             return $this->errorUnExpected($e);
         }

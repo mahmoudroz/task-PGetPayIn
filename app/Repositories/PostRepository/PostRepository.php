@@ -18,7 +18,7 @@ class PostRepository
                 $q->where('status', $filters['status']);
             })
             ->when(isset($filters['date']), function ($q) use ($filters) {
-                $q->whereDate('scheduled_time', $filters['date']);
+                $q->whereDate('created_at', $filters['date']);
             })
             ->simplePaginate(config('general.paginationCount', 10));
     }
