@@ -25,7 +25,7 @@ class StorePostRequest extends FormRequest
             'title'           => 'required|string|max:255',
             'content'         => 'required|string',
             'image_url'       => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'scheduled_time'  => 'nullable|date|after_or_equal:now',
+            'scheduled_time'  => 'required_if:status,1|date|after_or_equal:now',
             'status'          => 'required|in:0,1,2',
             'platform_ids'    => 'required|array|min:1',
             'platform_ids.*'  => 'required|exists:platforms,id'

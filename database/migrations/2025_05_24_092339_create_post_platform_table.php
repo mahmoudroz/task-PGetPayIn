@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('post_id')->constrained()->onDelete('cascade');
             $table->foreignId('platform_id')->constrained()->onDelete('cascade');
-            $table->tinyInteger('platform_status')->default(1)->comment('0 => not active, 1 => active');
+            $table->tinyInteger('platform_status')->default(0)->comment('0 => not publish, 1 => publish');
             $table->timestamps();
         });
     }

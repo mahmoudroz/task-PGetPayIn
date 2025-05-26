@@ -265,7 +265,7 @@ return [
         'client_id'          =>'المستخدم',
         'choose_client'      => 'اختر مستخدم للتطيبق  او ضيف ',
         'customer_name'      => 'اسم الضيف',
-
+        'scheduled_time'     => 'وقت الارسال',
         // custom validation
 
         'ar'    => [

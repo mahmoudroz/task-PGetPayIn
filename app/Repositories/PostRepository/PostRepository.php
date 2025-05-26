@@ -35,6 +35,11 @@ class PostRepository
 
         if (!empty($data['platform_ids'])) {
             $post->platforms()->attach($data['platform_ids']);
+            if ($post->status == 2) {
+                $post->platforms()->updateExistingPivot($data['platform_ids'], [
+                    'platform_status' => 1
+                ]);
+            }
         }
         DB::commit();
         return $post;
@@ -53,6 +58,11 @@ class PostRepository
 
         if (isset($data['platform_ids'])) {
             $post->platforms()->sync($data['platform_ids']);
+            if ($post->status == 2) {
+                $post->platforms()->updateExistingPivot($data['platform_ids'], [
+                    'platform_status' => 1
+                ]);
+            }
         }
         DB::commit();
         return $updated;
