@@ -16,6 +16,12 @@ class Post extends Model
     public $timestamps = true;
     public function platforms()
     {
-        return $this->belongsToMany(Platform::class)->withPivot('platform_status')->withTimestamps();
+        return $this->belongsToMany(Platform::class, 'post_platform')
+                    ->withPivot('platform_status')
+                    ->withTimestamps();
+    }
+    public function getImagePathAttribute(): string
+    {
+        return $this['image_url'] != null ? asset('uploads/posts/'. $this['image_url']) : null;
     }
 }

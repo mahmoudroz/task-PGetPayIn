@@ -15,16 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
+        Platform::factory()->count(5)->create();
         User::factory(5)->create()->each(function ($user) {
             Post::factory(3)->create([
                 'user_id' => $user->id,
             ])->each(function ($post) {
                 $platforms = Platform::inRandomOrder()->take(2)->get();
-                $post->platforms()->attach($platforms->pluck('id'), ['platform_status' => 'pending']);
+                $post->platforms()->attach($platforms->pluck('id'), ['platform_status' => 1]);
             });
         });
 
-        Platform::factory()->count(5)->create();
     }
 }

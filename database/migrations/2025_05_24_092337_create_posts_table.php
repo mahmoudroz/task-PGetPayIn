@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title', 150);
             $table->text('content', 3000);
             $table->string('image_url')->nullable();
-            $table->timestamp('scheduled_time');
+            $table->timestamp('scheduled_time')->nullable();
             $table->tinyInteger('status')->default(0)->comment('0 = draft, 1 = scheduled, 2 = published');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();

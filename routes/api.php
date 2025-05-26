@@ -4,9 +4,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\ChangeLanguage;
 use App\Http\Middleware\CustomSanctumAuth;
+use App\Http\Controllers\Api\V1\User\Post\PostController;
 use App\Http\Controllers\Api\V1\User\Profile\ProfileController;
 use App\Http\Controllers\Api\V1\User\Authentication\Login\LoginController;
 use App\Http\Controllers\Api\V1\User\Authentication\Register\RegisterController;
+use App\Http\Controllers\Api\V1\User\Platform\PlatformController;
 
 Route::group([
     'prefix'        => 'v1/user',
@@ -27,6 +29,10 @@ Route::group([
             Route::put('/', 'update');
             Route::post('/logout', 'logout');
         });
+
+        Route::get('/platforms', [PlatformController::class, 'index']);
+        Route::apiResource('posts', PostController::class);
+
 
     });
 

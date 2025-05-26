@@ -10,7 +10,7 @@ class Platform extends Model
     /** @use HasFactory<\Database\Factories\PlatformFactory> */
     use HasFactory;
     protected $table    = 'platforms';
-    protected $fillable = [];
+    protected $fillable = ['name', 'type'];
     protected $hidden   = [];
     public $timestamps  = true;
 }
