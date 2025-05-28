@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\User\Activity\ActivityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\ChangeLanguage;
@@ -32,6 +33,7 @@ Route::group([
 
         Route::get('/platforms', [PlatformController::class, 'index']);
         Route::apiResource('posts', PostController::class);
+        Route::get('/activities', [ActivityController::class, 'index']);
 
 
     });

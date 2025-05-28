@@ -13,6 +13,7 @@ class PostRepository
     public function index(User $user, array $filters = []): Paginator|Collection
     {
         return $user->posts()
+            ->select('id', 'title', 'content', 'image_url', 'scheduled_time', 'status', 'created_at')
             ->with('platforms')
             ->when(isset($filters['status']), function ($q) use ($filters) {
                 $q->where('status', $filters['status']);
@@ -41,6 +42,11 @@ class PostRepository
                 ]);
             }
         }
+        activity()
+        ->causedBy($user)
+        ->withProperties(['ip' => request()->ip()])
+        ->log('Created Post Successfully');
+
         DB::commit();
         return $post;
     }

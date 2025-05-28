@@ -25,8 +25,8 @@ class PlatformController extends Controller
     public function index()
     {
         try {
-            $posts = $this->platformService->index();
-            return $this->success(PlatformResource::collection($posts)->response()->getData(true), __('api.successfully'));
+            $platforms = $this->platformService->index();
+            return $this->success(PlatformResource::collection($platforms)->response()->getData(true), __('api.successfully'));
         } catch (Throwable $e) {
             return $this->errorUnExpected($e);
         }

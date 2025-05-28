@@ -21,8 +21,7 @@ class PostResource extends JsonResource
             'image_url'         => $this->image_path,
             'scheduled_time'    => $this->scheduled_time,
             'status'            => $this->status,
-            'created_at'        => $this->created_at,
-            'updated_at'        => $this->updated_at
+            'created_at'        => $this->created_at
         ];
     }
 }

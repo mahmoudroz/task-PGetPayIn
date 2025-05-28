@@ -20,8 +20,9 @@ class Post extends Model
                     ->withPivot('platform_status')
                     ->withTimestamps();
     }
-    public function getImagePathAttribute(): string
+
+    public function getImagePathAttribute(): string | null
     {
-        return $this['image_url'] != null ? asset('uploads/posts/'. $this['image_url']) : null;
+        return $this['image_url'] ? asset('uploads/posts/'. $this['image_url']) : null;
     }
 }

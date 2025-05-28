@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Activitylog\LogOptions;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -50,5 +51,14 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany(Post::class, 'user_id', 'id');
+    }
+    
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logOnly(['name', 'email'])
+            ->useLogName('user')
+            ->logOnlyDirty()
+            ->dontSubmitEmptyLogs();
     }
 }

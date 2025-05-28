@@ -1,67 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🗓️ Content Scheduler – Laravel 11
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern content scheduling platform built with Laravel 11 that allows users to create, manage, and schedule posts across multiple platforms like Twitter, Instagram, LinkedIn, and more.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### ✅ Core Functionality
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 🔐 User authentication (Laravel Sanctum)
+- 📝 Create, update, and delete posts with:
+  - Title, content, image upload
+  - Platform selection (multi-select)
+  - Scheduled publishing
+  - Status: `draft`, `scheduled`, `published`
+- 📆 Schedule posts for future publishing
+- 🔁 Laravel queue job to process due posts
+- 🧪 Per-platform content validation (e.g., character limits)
+- 🔄 Rate limiting: max 10 scheduled posts per user/day
+- 📝 Activity log (via `spatie/laravel-activitylog`)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ⚙️ Tech Stack
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Laravel 11.x
+- Sanctum for API authentication
+- Spatie Activity Log
+- Redis (via Predis)
+- Laravel Queues & Scheduler
+- SQLite / MySQL (via XAMPP)
+- Postman (for API testing)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🖥️ Setup Instructions
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1️⃣ Requirements
 
-### Premium Partners
+- PHP ^8.2
+- Composer
+- Node.js & npm
+- Redis Server
+- XAMPP (or any MySQL server)
+- Laravel CLI
+- Postman (for API testing)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+### 2️⃣ Installation Steps
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# Clone the repository
+git clone https://github.com/mahmoudroz/task-PGetPayIn.git
+cd task-PGetPayIn
 
-## Code of Conduct
+# Install backend dependencies
+composer install
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Copy environment file
+cp .env.example .env
 
-## Security Vulnerabilities
+# Generate app key
+php artisan key:generate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Migration and Seeders
+php artisan migrate --seed
 
-## License
+# import postman collection from root project
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# task-PGetPayIn
+# run
+php artisan serve 
+
+Explanation of Approach and Trade-offs
+Approach
+Built the API using Laravel 11 with Sanctum for simple and secure user authentication.
+
+Used a pivot table to link posts with multiple platforms, allowing flexible multi-platform scheduling.
+
+Scheduled post publishing using Laravel Jobs dispatched by the Scheduler to ensure timely, asynchronous processing without blocking user requests.
+
+Integrated spatie/laravel-activitylog to track user activities and maintain an audit log.
+
+Trade-offs
+Did not implement real API integration with social platforms (Twitter, Instagram, etc.); publishing is mocked to simplify development and testing.
+
+Frontend UI and dashboard features were skipped due to time constraints, focusing mainly on backend functionality.
+
+
+Chose a simple MVC architecture over more complex patterns like Domain-Driven Design to speed up development and keep the codebase easy to understand and maintain.
+
+Implemented software design patterns such as the Repository Pattern to separate data access logic, making it easier to modify the data source (e.g., switching databases) without affecting other parts of the application.
+
+Used the Service Layer Pattern to organize business logic outside of controllers, improving maintainability and testability.
+
+Applied Dependency Injection to enhance scalability and facilitate unit testing.
+
+These design patterns helped create clean, reusable, and easy-to-understand code that can be maintained and extended by the development team efficiently.
