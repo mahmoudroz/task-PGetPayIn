@@ -1,0 +1,2453 @@
+{
+	"info": {
+		"_postman_id": "204d9caf-7a33-47c5-ab23-730377ccb590",
+		"name": "PGetPayIn",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17225556"
+	},
+	"item": [
+		{
+			"name": "Api",
+			"item": [
+				{
+					"name": "V1",
+					"item": [
+						{
+							"name": "User",
+							"item": [
+								{
+									"name": "Login",
+									"item": [
+										{
+											"name": "Login",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// parse the response\r",
+															"var jsonData = pm.response.json();\r",
+															"\r",
+															"// set token in collection variable\r",
+															"pm.collectionVariables.set(\"token_test\", jsonData.data.token);\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "lang",
+														"value": "ar",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "email",
+															"value": "ahmed@gmail.com",
+															"type": "text"
+														},
+														{
+															"key": "password",
+															"value": "z0123456789Z@",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/user/auth/login",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"login"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Login",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "lang",
+																"value": "ar",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/login",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"login"
+															]
+														}
+													},
+													"status": "Unprocessable Content",
+													"code": 422,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 12:49:07 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": false,\n    \"msg\": \"البريد الالكتروني مطلوب.\",\n    \"data\": {}\n}"
+												},
+												{
+													"name": "Login",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "lang",
+																"value": "ar",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "email",
+																	"value": "a@gmail.com",
+																	"type": "text"
+																},
+																{
+																	"key": "password",
+																	"value": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+																	"type": "text"
+																}
+															]
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/login",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"login"
+															]
+														}
+													},
+													"status": "Unprocessable Content",
+													"code": 422,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 13:15:54 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": false,\n    \"msg\": \"يجب أن لا يتجاوز طول النّص كلمة المرور 50 حروفٍ/حرفًا.\",\n    \"data\": {}\n}"
+												},
+												{
+													"name": "Login",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "lang",
+																"value": "ar",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "email",
+																	"value": "a@gmail.com",
+																	"type": "text"
+																},
+																{
+																	"key": "password",
+																	"value": "123",
+																	"type": "text"
+																}
+															]
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/login",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"login"
+															]
+														}
+													},
+													"status": "Unprocessable Content",
+													"code": 422,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 13:17:00 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": false,\n    \"msg\": \"بيانات الدخول غير صحيحة\",\n    \"data\": {}\n}"
+												},
+												{
+													"name": "Login",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "lang",
+																"value": "ar",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "email",
+																	"value": "Mahmoud19669@gmail.com",
+																	"type": "text"
+																},
+																{
+																	"key": "password",
+																	"value": "z0123456789Z@",
+																	"type": "text"
+																}
+															]
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/login",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"login"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 13:18:09 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": true,\n    \"msg\": \"تم تسجيل الدخول بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 12,\n            \"name\": \"Mahmoud\",\n            \"email\": \"Mahmoud19669@gmail.com\",\n            \"email_verified_at\": null,\n            \"deleted_at\": null,\n            \"created_at\": \"2025-05-24T12:43:38.000000Z\",\n            \"updated_at\": \"2025-05-24T12:43:38.000000Z\"\n        },\n        \"token\": \"8|AX22ZCIjPmXrnyJFuTvxkDM3nmf54ZXOkKYfoS36a45b66ea\"\n    }\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Register",
+									"item": [
+										{
+											"name": "Register",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// parse the response\r",
+															"var jsonData = pm.response.json();\r",
+															"\r",
+															"// set token in collection variable\r",
+															"pm.collectionVariables.set(\"token_test\", jsonData.data.token);\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\"        : \"Mahmoud\",\r\n    \"email\"       : \"Mahmou39@gmail.com\",\r\n    \"password\"    : \"z0123456789Z@\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/user/auth/register",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"register"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Register",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"name\"        : \"Mahmoud\",\r\n    \"email\"       : \"Mahmoud@gmail.com\",\r\n    \"password\"    : \"z0123456789Z@\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/register",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"register"
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 12:28:52 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": false,\n    \"msg\": \"Method App\\\\Http\\\\Requests\\\\Api\\\\V1\\\\User\\\\Register\\\\RegisterUserRequest\\\\RegisterUserRequest::secureValidated does not exist.\",\n    \"data\": {}\n}"
+												},
+												{
+													"name": "Register",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"name\"        : \"Mahmoud\",\r\n    \"email\"       : \"Mahmoud@gmail.com\",\r\n    \"password\"    : \"z0123456789Z@\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/register",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"register"
+															]
+														}
+													},
+													"status": "Unprocessable Content",
+													"code": 422,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 12:30:01 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": false,\n    \"msg\": \"The email has already been taken.\",\n    \"data\": {}\n}"
+												},
+												{
+													"name": "Register",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"name\"        : \"Mahmoud\",\r\n    \"email\"       : \"Mahmoud2@gmail.com\",\r\n    \"password\"    : \"z0123456789Z@\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/register",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"register"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 12:30:14 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": true,\n    \"msg\": \"User registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Mahmoud\",\n            \"email\": \"Mahmoud2@gmail.com\",\n            \"updated_at\": \"2025-05-24T12:30:14.000000Z\",\n            \"created_at\": \"2025-05-24T12:30:14.000000Z\",\n            \"id\": 7\n        },\n        \"token\": \"2|qiwJlv6KbNIFglYr0ep05AB46V9GJRkArsM7OMHSa7af1dc2\"\n    }\n}"
+												},
+												{
+													"name": "Register",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"name\"        : \"Mahmoud\",\r\n    \"email\"       : \"Mahmoud2@gmail.com\",\r\n    \"password\"    : \"z0123456789Z@\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/register",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"register"
+															]
+														}
+													},
+													"status": "Unprocessable Content",
+													"code": 422,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 12:39:34 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": false,\n    \"msg\": \"قيمة البريد الالكتروني مُستخدمة من قبل.\",\n    \"data\": {}\n}"
+												},
+												{
+													"name": "Register",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"name\"        : \"\",\r\n    \"email\"       : \"Mahmoud19669@gmail.com\",\r\n    \"password\"    : \"z0123456789Z@\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/register",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"register"
+															]
+														}
+													},
+													"status": "Unprocessable Content",
+													"code": 422,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 12:43:50 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": false,\n    \"msg\": \"الاسم مطلوب.\",\n    \"data\": {}\n}"
+												},
+												{
+													"name": "Register",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"name\"        : \"Mahmoud\",\r\n    \"email\"       : \"Mahmou39@gmail.com\",\r\n    \"password\"    : \"z0123456789Z@\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/auth/register",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"auth",
+																"register"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Host",
+															"value": "localhost:8000"
+														},
+														{
+															"key": "Connection",
+															"value": "close"
+														},
+														{
+															"key": "X-Powered-By",
+															"value": "PHP/8.2.12"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, private"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 24 May 2025 13:38:02 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"status\": true,\n    \"msg\": \"تم التسجيل بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 15,\n            \"name\": \"Mahmoud\",\n            \"email\": \"Mahmou39@gmail.com\",\n            \"email_verified_at\": null,\n            \"deleted_at\": null,\n            \"created_at\": \"2025-05-24T13:38:02.000000Z\",\n            \"updated_at\": \"2025-05-24T13:38:02.000000Z\"\n        },\n        \"token\": \"13|P4HMvY7f49hIMt6lECSznH4C5YgJIAsPIM5inUhN3264fd79\"\n    }\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Profile",
+									"item": [
+										{
+											"name": "ShowProfile",
+											"item": [
+												{
+													"name": "ShowProfile",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{token_test}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "lang",
+																"value": "ar",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "{{url}}/api/v1/user/profile",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"profile"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "ShowProfile",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "ar",
+																		"type": "text"
+																	}
+																],
+																"url": {
+																	"raw": "{{url}}/api/v1/user/profile",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"profile"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 24 May 2025 14:10:53 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 12,\n            \"name\": \"Mahmoud\",\n            \"email\": \"Mahmoud19669@gmail.com\",\n            \"email_verified_at\": null,\n            \"deleted_at\": null,\n            \"created_at\": \"2025-05-24T12:43:38.000000Z\",\n            \"updated_at\": \"2025-05-24T12:43:38.000000Z\"\n        },\n        \"token\": null\n    }\n}"
+														},
+														{
+															"name": "ShowProfile",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "ar",
+																		"type": "text"
+																	}
+																],
+																"url": {
+																	"raw": "{{url}}/api/v1/user/profile",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"profile"
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 24 May 2025 14:29:41 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": false,\n    \"msg\": \"من فضلك سجل الدخول للمتابعة\",\n    \"data\": {}\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "Logout",
+											"item": [
+												{
+													"name": "Logout",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{token_test}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "lang",
+																"value": "en",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "{{url}}/api/v1/user/profile/logout",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"profile",
+																"logout"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "DeleteProfile",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "en",
+																		"type": "text"
+																	}
+																],
+																"url": {
+																	"raw": "{{url}}/api/v1/user/profile/logout",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"profile",
+																		"logout"
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 24 May 2025 14:43:36 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": false,\n    \"msg\": \"Please login to continue\",\n    \"data\": {}\n}"
+														},
+														{
+															"name": "DeleteProfile",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "en",
+																		"type": "text"
+																	}
+																],
+																"url": {
+																	"raw": "{{url}}/api/v1/user/profile/logout",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"profile",
+																		"logout"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 24 May 2025 14:44:06 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"Logout Successfully\",\n    \"data\": {}\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "UpdateProfile",
+											"item": [
+												{
+													"name": "UpdateProfile",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{token_test}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"name\"      : \"ahmed\",\r\n    \"email\"     : \"ahmed@gmail.com\",\r\n    \"password\"  : \"z0123456789Z@\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/profile",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"profile"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "UpdateProfile",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\r\n    \"name\"   : \"ahmed\",\r\n    \"email\"  : \"ahmed@\"\r\n}",
+																	"options": {
+																		"raw": {
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/profile",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"profile"
+																	]
+																}
+															},
+															"status": "Unprocessable Content",
+															"code": 422,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 24 May 2025 14:56:20 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": false,\n    \"msg\": \"يجب أن يكون البريد الالكتروني عنوان بريد إلكتروني صحيح البُنية.\",\n    \"data\": {}\n}"
+														},
+														{
+															"name": "UpdateProfile",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\r\n    \"name\"   : \"ahmed\",\r\n    \"email\"  : \"ahmed@gmail.com\"\r\n}",
+																	"options": {
+																		"raw": {
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/profile",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"profile"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 24 May 2025 14:56:38 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم التحديث بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 12,\n            \"name\": \"ahmed\",\n            \"email\": \"ahmed@gmail.com\",\n            \"email_verified_at\": null,\n            \"deleted_at\": null,\n            \"created_at\": \"2025-05-24T12:43:38.000000Z\",\n            \"updated_at\": \"2025-05-24T14:56:37.000000Z\"\n        },\n        \"token\": null\n    }\n}"
+														},
+														{
+															"name": "UpdateProfile",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\r\n    \"name\"      : \"ahmed\",\r\n    \"email\"     : \"ahmed@gmail.com\",\r\n    \"password\"  : \"z0123456789Z@1\"\r\n}",
+																	"options": {
+																		"raw": {
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/profile",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"profile"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 24 May 2025 14:58:49 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم التحديث بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 12,\n            \"name\": \"ahmed\",\n            \"email\": \"ahmed@gmail.com\",\n            \"email_verified_at\": null,\n            \"deleted_at\": null,\n            \"created_at\": \"2025-05-24T12:43:38.000000Z\",\n            \"updated_at\": \"2025-05-24T14:58:49.000000Z\"\n        },\n        \"token\": null\n    }\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Post",
+									"item": [
+										{
+											"name": "Index",
+											"item": [
+												{
+													"name": "Index",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{token_test}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"name\"      : \"ahmed\",\r\n    \"email\"     : \"ahmed@gmail.com\",\r\n    \"password\"  : \"z0123456789Z@\"\r\n}"
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/posts?status=2&date=2025-05-26",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"posts"
+															],
+															"query": [
+																{
+																	"key": "status",
+																	"value": "2"
+																},
+																{
+																	"key": "date",
+																	"value": "2025-05-26"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Index",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\r\n    \"name\"      : \"ahmed\",\r\n    \"email\"     : \"ahmed@gmail.com\",\r\n    \"password\"  : \"z0123456789Z@\"\r\n}"
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/posts",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"posts"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Mon, 26 May 2025 20:28:31 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم بنجاح\",\n    \"data\": []\n}"
+														},
+														{
+															"name": "Index",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\r\n    \"name\"      : \"ahmed\",\r\n    \"email\"     : \"ahmed@gmail.com\",\r\n    \"password\"  : \"z0123456789Z@\"\r\n}"
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/posts",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"posts"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Wed, 28 May 2025 23:32:10 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم بنجاح\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 5857,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": \"http://localhost:8000/uploads/posts/91918646c3f633b5b6116f3a968b5b5c5b779644046cac4b.jpg\",\n                \"scheduled_time\": \"2025-05-25 23:51:22\",\n                \"status\": 2,\n                \"created_at\": \"2025-05-26T23:16:30.000000Z\"\n            },\n            {\n                \"id\": 5858,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": null,\n                \"scheduled_time\": \"2025-05-29 23:51:22\",\n                \"status\": 1,\n                \"created_at\": \"2025-05-28T22:10:05.000000Z\"\n            },\n            {\n                \"id\": 5859,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": \"http://localhost:8000/uploads/posts/59664187dfe16df95447963ce82d939103c773c3dedf9b7.jpg\",\n                \"scheduled_time\": \"2025-05-29 23:51:22\",\n                \"status\": 1,\n                \"created_at\": \"2025-05-28T22:10:39.000000Z\"\n            },\n            {\n                \"id\": 5860,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": \"http://localhost:8000/uploads/posts/212508582e9cee576e84e3cb8c1fb434e9f426cc0817e26a.jpg\",\n                \"scheduled_time\": \"2025-05-29 23:51:22\",\n                \"status\": 1,\n                \"created_at\": \"2025-05-28T22:12:32.000000Z\"\n            },\n            {\n                \"id\": 5861,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": null,\n                \"scheduled_time\": \"2025-05-29 23:51:22\",\n                \"status\": 1,\n                \"created_at\": \"2025-05-28T22:35:26.000000Z\"\n            },\n            {\n                \"id\": 5862,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": null,\n                \"scheduled_time\": \"2025-05-29 23:51:22\",\n                \"status\": 1,\n                \"created_at\": \"2025-05-28T22:36:03.000000Z\"\n            },\n            {\n                \"id\": 5863,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": null,\n                \"scheduled_time\": \"2025-05-29 23:51:22\",\n                \"status\": 1,\n                \"created_at\": \"2025-05-28T22:36:13.000000Z\"\n            },\n            {\n                \"id\": 5864,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": null,\n                \"scheduled_time\": \"2025-05-29 23:51:22\",\n                \"status\": 1,\n                \"created_at\": \"2025-05-28T22:36:33.000000Z\"\n            },\n            {\n                \"id\": 5865,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": null,\n                \"scheduled_time\": \"2025-05-29 23:51:22\",\n                \"status\": 1,\n                \"created_at\": \"2025-05-28T22:36:45.000000Z\"\n            },\n            {\n                \"id\": 5866,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": null,\n                \"scheduled_time\": \"2025-05-29 23:51:22\",\n                \"status\": 1,\n                \"created_at\": \"2025-05-28T22:37:21.000000Z\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://localhost:8000/api/v1/user/posts?page=1\",\n            \"last\": null,\n            \"prev\": null,\n            \"next\": \"http://localhost:8000/api/v1/user/posts?page=2\"\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"path\": \"http://localhost:8000/api/v1/user/posts\",\n            \"per_page\": 10,\n            \"to\": 10\n        }\n    }\n}"
+														},
+														{
+															"name": "Index",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\r\n    \"name\"      : \"ahmed\",\r\n    \"email\"     : \"ahmed@gmail.com\",\r\n    \"password\"  : \"z0123456789Z@\"\r\n}"
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/posts?status=2&date=2025-05-26",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"posts"
+																	],
+																	"query": [
+																		{
+																			"key": "status",
+																			"value": "2"
+																		},
+																		{
+																			"key": "date",
+																			"value": "2025-05-26"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Wed, 28 May 2025 23:32:22 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم بنجاح\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 5857,\n                \"title\": \"post2\",\n                \"content\": \"content2\",\n                \"image_url\": \"http://localhost:8000/uploads/posts/91918646c3f633b5b6116f3a968b5b5c5b779644046cac4b.jpg\",\n                \"scheduled_time\": \"2025-05-25 23:51:22\",\n                \"status\": 2,\n                \"created_at\": \"2025-05-26T23:16:30.000000Z\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://localhost:8000/api/v1/user/posts?page=1\",\n            \"last\": null,\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"path\": \"http://localhost:8000/api/v1/user/posts\",\n            \"per_page\": 10,\n            \"to\": 1\n        }\n    }\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "Store",
+											"item": [
+												{
+													"name": "Store",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{token_test}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "lang",
+																"value": "ar",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "title",
+																	"value": "post2",
+																	"type": "text"
+																},
+																{
+																	"key": "content",
+																	"value": "content2",
+																	"type": "text"
+																},
+																{
+																	"key": "image_url",
+																	"type": "file",
+																	"src": "/E:/images.jfif"
+																},
+																{
+																	"key": "scheduled_time",
+																	"value": "2025-05-29 23:51:22",
+																	"type": "text"
+																},
+																{
+																	"key": "status",
+																	"value": "1",
+																	"type": "text"
+																},
+																{
+																	"key": "platform_ids[]",
+																	"value": "1",
+																	"type": "text"
+																},
+																{
+																	"key": "platform_ids[]",
+																	"value": "2",
+																	"type": "text"
+																}
+															]
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/posts",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"posts"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Store",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "ar",
+																		"type": "text"
+																	}
+																],
+																"body": {
+																	"mode": "formdata",
+																	"formdata": [
+																		{
+																			"key": "email",
+																			"value": "ahmed@gmail.com",
+																			"type": "text"
+																		},
+																		{
+																			"key": "password",
+																			"value": "z0123456789Z@",
+																			"type": "text"
+																		}
+																	]
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/posts",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"posts"
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Mon, 26 May 2025 20:29:00 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": false,\n    \"msg\": \"من فضلك سجل الدخول للمتابعة\",\n    \"data\": {}\n}"
+														},
+														{
+															"name": "Store",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "ar",
+																		"type": "text"
+																	}
+																],
+																"body": {
+																	"mode": "formdata",
+																	"formdata": [
+																		{
+																			"key": "title",
+																			"value": "post2",
+																			"type": "text"
+																		},
+																		{
+																			"key": "content",
+																			"value": "content2",
+																			"type": "text"
+																		},
+																		{
+																			"key": "image_url",
+																			"type": "file",
+																			"src": "/E:/images.jfif",
+																			"disabled": true
+																		},
+																		{
+																			"key": "scheduled_time",
+																			"value": "2025-05-29 23:51:22",
+																			"type": "text"
+																		},
+																		{
+																			"key": "status",
+																			"value": "1",
+																			"type": "text"
+																		},
+																		{
+																			"key": "platform_ids[]",
+																			"value": "1",
+																			"type": "text"
+																		},
+																		{
+																			"key": "platform_ids[]",
+																			"value": "2",
+																			"type": "text"
+																		}
+																	]
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/posts",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"posts"
+																	]
+																}
+															},
+															"status": "Unprocessable Content",
+															"code": 422,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Wed, 28 May 2025 22:38:00 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": false,\n    \"msg\": \"You have reached the maximum number of scheduled posts for today.\",\n    \"data\": {}\n}"
+														},
+														{
+															"name": "Store",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "ar",
+																		"type": "text"
+																	}
+																],
+																"body": {
+																	"mode": "formdata",
+																	"formdata": [
+																		{
+																			"key": "title",
+																			"value": "post2",
+																			"type": "text"
+																		},
+																		{
+																			"key": "content",
+																			"value": "content2",
+																			"type": "text"
+																		},
+																		{
+																			"key": "image_url",
+																			"type": "file",
+																			"src": "/E:/images.jfif"
+																		},
+																		{
+																			"key": "scheduled_time",
+																			"value": "2025-05-29 23:51:22",
+																			"type": "text"
+																		},
+																		{
+																			"key": "status",
+																			"value": "1",
+																			"type": "text"
+																		},
+																		{
+																			"key": "platform_ids[]",
+																			"value": "1",
+																			"type": "text"
+																		},
+																		{
+																			"key": "platform_ids[]",
+																			"value": "2",
+																			"type": "text"
+																		}
+																	]
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/posts",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"posts"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Wed, 28 May 2025 23:31:09 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم بنجاح\",\n    \"data\": {\n        \"id\": 5896,\n        \"title\": \"post2\",\n        \"content\": \"content2\",\n        \"image_url\": null,\n        \"scheduled_time\": \"2025-05-29 23:51:22\",\n        \"status\": \"1\",\n        \"created_at\": \"2025-05-28T23:31:08.000000Z\"\n    }\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "Update",
+											"item": [
+												{
+													"name": "Update",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{token_test}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"title\"     : \"post3\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/posts/18",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"posts",
+																"18"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Update",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\r\n    \"title\"     : \"post3\"\r\n}",
+																	"options": {
+																		"raw": {
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/posts/18",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"posts",
+																		"18"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Wed, 28 May 2025 23:31:25 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم بنجاح\",\n    \"data\": {\n        \"id\": 18,\n        \"title\": \"post3\",\n        \"content\": \"Nulla eos et minima fuga aperiam. Tempore voluptatem aut ut perferendis porro. Soluta deleniti sequi beatae soluta alias.\",\n        \"image_url\": null,\n        \"scheduled_time\": \"2025-05-27 03:01:07\",\n        \"status\": 1,\n        \"created_at\": \"2025-05-26T23:05:40.000000Z\"\n    }\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "Delete",
+											"item": [
+												{
+													"name": "Delete",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{token_test}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{url}}/api/v1/user/posts/18",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"posts",
+																"18"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Delete",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [],
+																"url": {
+																	"raw": "{{url}}/api/v1/user/posts/16",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"posts",
+																		"16"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Mon, 26 May 2025 21:49:53 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم بنجاح\",\n    \"data\": {}\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Platforms",
+									"item": [
+										{
+											"name": "Index",
+											"item": [
+												{
+													"name": "Index",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{token_test}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "lang",
+																"value": "ar",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": []
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/platforms",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"platforms"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Index",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "ar",
+																		"type": "text"
+																	}
+																],
+																"body": {
+																	"mode": "formdata",
+																	"formdata": []
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/platforms",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"platforms"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Mon, 26 May 2025 22:15:42 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم بنجاح\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Spencer Ltd\",\n                \"type\": 2\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Lang, McKenzie and Durgan\",\n                \"type\": 1\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Robel-Luettgen\",\n                \"type\": 3\n            },\n            {\n                \"id\": 4,\n                \"name\": \"McClure, Kihn and Mills\",\n                \"type\": 1\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Bednar and Sons\",\n                \"type\": 1\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://localhost:8000/api/v1/user/platforms?page=1\",\n            \"last\": null,\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"path\": \"http://localhost:8000/api/v1/user/platforms\",\n            \"per_page\": 10,\n            \"to\": 5\n        }\n    }\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Activities",
+									"item": [
+										{
+											"name": "Index",
+											"item": [
+												{
+													"name": "Index",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{token_test}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "lang",
+																"value": "ar",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": []
+														},
+														"url": {
+															"raw": "{{url}}/api/v1/user/activities",
+															"host": [
+																"{{url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"user",
+																"activities"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Index",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "ar",
+																		"type": "text"
+																	}
+																],
+																"body": {
+																	"mode": "formdata",
+																	"formdata": []
+																},
+																"url": {
+																	"raw": "{{url}}/api/v1/user/activities",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"activities"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Wed, 28 May 2025 22:12:38 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": true,\n    \"msg\": \"تم بنجاح\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 3,\n                \"log_name\": \"default\",\n                \"description\": \"Created Post Successfully\",\n                \"subject_type\": null,\n                \"event\": null,\n                \"subject_id\": null,\n                \"causer_type\": \"App\\\\Models\\\\User\",\n                \"causer_id\": 6,\n                \"properties\": {\n                    \"ip\": \"127.0.0.1\"\n                },\n                \"batch_uuid\": null,\n                \"created_at\": \"2025-05-28T22:12:32.000000Z\",\n                \"updated_at\": \"2025-05-28T22:12:32.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"log_name\": \"default\",\n                \"description\": \"User logged in\",\n                \"subject_type\": null,\n                \"event\": null,\n                \"subject_id\": null,\n                \"causer_type\": \"App\\\\Models\\\\User\",\n                \"causer_id\": 6,\n                \"properties\": {\n                    \"ip\": \"127.0.0.1\"\n                },\n                \"batch_uuid\": null,\n                \"created_at\": \"2025-05-28T22:10:39.000000Z\",\n                \"updated_at\": \"2025-05-28T22:10:39.000000Z\"\n            },\n            {\n                \"id\": 1,\n                \"log_name\": \"default\",\n                \"description\": \"User logged in\",\n                \"subject_type\": null,\n                \"event\": null,\n                \"subject_id\": null,\n                \"causer_type\": \"App\\\\Models\\\\User\",\n                \"causer_id\": 6,\n                \"properties\": {\n                    \"ip\": \"127.0.0.1\"\n                },\n                \"batch_uuid\": null,\n                \"created_at\": \"2025-05-28T22:10:06.000000Z\",\n                \"updated_at\": \"2025-05-28T22:10:06.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/v1/user/activities?page=1\",\n        \"from\": 1,\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/v1/user/activities\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 3\n    }\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "token_test",
+			"value": ""
+		}
+	]
+}
