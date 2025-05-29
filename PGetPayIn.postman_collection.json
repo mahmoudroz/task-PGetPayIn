@@ -1021,68 +1021,7 @@
 													},
 													"response": [
 														{
-															"name": "DeleteProfile",
-															"originalRequest": {
-																"method": "POST",
-																"header": [
-																	{
-																		"key": "lang",
-																		"value": "en",
-																		"type": "text"
-																	}
-																],
-																"url": {
-																	"raw": "{{url}}/api/v1/user/profile/logout",
-																	"host": [
-																		"{{url}}"
-																	],
-																	"path": [
-																		"api",
-																		"v1",
-																		"user",
-																		"profile",
-																		"logout"
-																	]
-																}
-															},
-															"status": "Unauthorized",
-															"code": 401,
-															"_postman_previewlanguage": "json",
-															"header": [
-																{
-																	"key": "Host",
-																	"value": "localhost:8000"
-																},
-																{
-																	"key": "Connection",
-																	"value": "close"
-																},
-																{
-																	"key": "X-Powered-By",
-																	"value": "PHP/8.2.12"
-																},
-																{
-																	"key": "Cache-Control",
-																	"value": "no-cache, private"
-																},
-																{
-																	"key": "Date",
-																	"value": "Sat, 24 May 2025 14:43:36 GMT"
-																},
-																{
-																	"key": "Content-Type",
-																	"value": "application/json"
-																},
-																{
-																	"key": "Access-Control-Allow-Origin",
-																	"value": "*"
-																}
-															],
-															"cookie": [],
-															"body": "{\n    \"status\": false,\n    \"msg\": \"Please login to continue\",\n    \"data\": {}\n}"
-														},
-														{
-															"name": "DeleteProfile",
+															"name": "Logout",
 															"originalRequest": {
 																"method": "POST",
 																"header": [
@@ -1128,7 +1067,7 @@
 																},
 																{
 																	"key": "Date",
-																	"value": "Sat, 24 May 2025 14:44:06 GMT"
+																	"value": "Thu, 29 May 2025 15:33:35 GMT"
 																},
 																{
 																	"key": "Content-Type",
@@ -1141,6 +1080,67 @@
 															],
 															"cookie": [],
 															"body": "{\n    \"status\": true,\n    \"msg\": \"Logout Successfully\",\n    \"data\": {}\n}"
+														},
+														{
+															"name": "Logout",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "lang",
+																		"value": "en",
+																		"type": "text"
+																	}
+																],
+																"url": {
+																	"raw": "{{url}}/api/v1/user/profile/logout",
+																	"host": [
+																		"{{url}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"user",
+																		"profile",
+																		"logout"
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Host",
+																	"value": "localhost:8000"
+																},
+																{
+																	"key": "Connection",
+																	"value": "close"
+																},
+																{
+																	"key": "X-Powered-By",
+																	"value": "PHP/8.2.12"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, private"
+																},
+																{
+																	"key": "Date",
+																	"value": "Thu, 29 May 2025 15:33:47 GMT"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Access-Control-Allow-Origin",
+																	"value": "*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"status\": false,\n    \"msg\": \"Please login to continue\",\n    \"data\": {}\n}"
 														}
 													]
 												}
