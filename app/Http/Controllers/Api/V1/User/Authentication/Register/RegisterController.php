@@ -28,30 +28,4 @@ class RegisterController extends Controller
             return $this->errorUnExpected($e);
         }
     }
-
-
-    // public function profile(Request $request)
-    // {
-    //     return response()->json($request->user());
-    // }
-
-    // public function updateProfile(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'string|max:255',
-    //     ]);
-
-    //     try {
-    //         $user = $this->userRepository->update($request->user(), $request->only('name'));
-    //         return response()->json(['message' => 'Profile updated', 'user' => $user]);
-    //     } catch (Throwable $e) {
-    //         return response()->json(['error' => $e->getMessage()], 500);
-    //     }
-    // }
-
-    // public function logout(Request $request)
-    // {
-    //     $request->user()->currentAccessToken()->delete();
-    //     return response()->json(['message' => 'Logged out successfully']);
-    // }
 }
