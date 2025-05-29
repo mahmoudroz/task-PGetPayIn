@@ -97,3 +97,20 @@ Used the Service Layer Pattern to organize business logic outside of controllers
 Applied Dependency Injection to enhance scalability and facilitate unit testing.
 
 These design patterns helped create clean, reusable, and easy-to-understand code that can be maintained and extended by the development team efficiently.
+
+## Tests
+
+This project includes feature tests for key user functionalities, including:
+
+- User login using Laravel Sanctum.
+
+These tests help ensure the API endpoints work correctly and securely.
+
+
+## API Video Demo
+
+You can watch a video demonstration of the API functionality here:
+
+[API Video Demo]
+(https://drive.google.com/file/d/1VKVjgEISm6kN2oZEagEMPdzcjC6TJ-Lr/view?usp=sharing)
+
